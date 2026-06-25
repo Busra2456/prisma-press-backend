@@ -19,6 +19,38 @@ const registerUser = catchAsync(async (req:Request,res :Response, next: NextFunc
         }
     })
 })
+
+const getMyProfile = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
+
+ const profile = await userService.getMyProfileFromDB(req.user?.id as string);
+
+
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: "User profile fetched successfully",
+        data: { profile }
+    })
+})
+
+const updateMyProfile = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
+    const userId = req.user?.id as string;
+
+    const payload = req.body;
+
+    const updatedProfile = await userService.updateMyProfileInDB(userId, payload);
+
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: "User profile updated successfully",
+        data: { updatedProfile }
+    })
+})
+
+
 export const userController = {
-      registerUser
+      registerUser,
+      getMyProfile,
+      updateMyProfile
 }
