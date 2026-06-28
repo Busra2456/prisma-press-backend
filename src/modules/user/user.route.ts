@@ -15,3 +15,4 @@ router.get("/me",auth(Role.ADMIN, Role.USER, Role.AUTHOR),userController.getMyPr
 router.put("/my-profile",auth(Role.ADMIN, Role.USER, Role.AUTHOR), userController.updateMyProfile);
 
 export const userRoutes = router
+
