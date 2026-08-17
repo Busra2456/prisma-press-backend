@@ -1,5 +1,4 @@
-import { CommentStatus } from "../../../generated/prisma/enums";
-
+import { CommentStatus } from "../../../generated/prisma/enums.js";
 export interface ICreateCommentPayload {
     postId: string;
     authorId: string;

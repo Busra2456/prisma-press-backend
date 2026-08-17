@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import { SubscriptionStatus } from "../../generated/prisma/enums";
-import { prisma } from "../lib/prisma";
-import { catchAsync } from "../utils/catchAsync";
+import { SubscriptionStatus } from "../../generated/prisma/enums.js";
+import { prisma } from "../lib/prisma.js";
+import { catchAsync } from "../utils/catchAsync.js";
 
 export const subscriptionGuard = () => {
     return catchAsync(

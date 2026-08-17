@@ -1,8 +1,10 @@
-import config from "../../config";
-import { prisma } from "../../lib/prisma";
-import { stripe } from "../../lib/stripe";
-import { handleChangeSubscription, handleCheckoutCompleted } from "./subscription.utils";
-
+import config from "../../config/index.js";
+import { prisma } from "../../lib/prisma.js";
+import { stripe } from "../../lib/stripe.js";
+import {
+  handleChangeSubscription,
+  handleCheckoutCompleted,
+} from "./subscription.utils.js";
 const createCheckoutSession = async (userId : string) => {
     const transactionResult = await prisma.$transaction(async (tx) => {
 

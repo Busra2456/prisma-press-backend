@@ -1,6 +1,6 @@
-import { PostWhereInput } from "../../../generated/prisma/models";
-import { prisma } from "../../lib/prisma";
-import { IPostQuery } from "../post/post.interface";
+import { PostWhereInput } from "../../../generated/prisma/models.js";
+import { prisma } from "../../lib/prisma.js";
+import { IPostQuery } from "../post/post.interface.js";
 
 const getPremiumContent = async (query : IPostQuery) => {
 

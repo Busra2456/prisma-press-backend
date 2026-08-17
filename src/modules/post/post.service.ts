@@ -1,8 +1,11 @@
-import { CommentStatus, PostStatus } from "../../../generated/prisma/enums"
-import { PostWhereInput } from "../../../generated/prisma/models"
-import { prisma } from "../../lib/prisma"
-import { ICreatePostPayload, IPostQuery, IUpdatePostPayload } from "./post.interface"
-
+import { CommentStatus, PostStatus } from "../../../generated/prisma/enums.js";
+import { PostWhereInput } from "../../../generated/prisma/models.js";
+import { prisma } from "../../lib/prisma.js";
+import {
+  ICreatePostPayload,
+  IPostQuery,
+  IUpdatePostPayload,
+} from "./post.interface.js";
 const createPost = async (payload : ICreatePostPayload, userId : string) => {
     const result = await prisma.post.create({
         data : {

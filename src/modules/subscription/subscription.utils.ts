@@ -1,7 +1,7 @@
-import Stripe from "stripe"
-import { SubscriptionStatus } from "../../../generated/prisma/enums"
-import { prisma } from "../../lib/prisma"
-import { stripe } from "../../lib/stripe"
+import Stripe from "stripe";
+import { SubscriptionStatus } from "../../../generated/prisma/enums.js";
+import { prisma } from "../../lib/prisma.js";
+import { stripe } from "../../lib/stripe.js";
 
 export const getPeriodEnd = (payload: Stripe.Subscription) => {
     const currentPeriodEndInMilliseconds = payload.items.data[0]?.current_period_end!
