@@ -1,17 +1,16 @@
-import express,{ Application, Request, Response } from "express";
-import config from "./config";
+import express, { Application, Request, Response } from "express";
+import config from "./config/index.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-import { userRoutes } from "./modules/user/user.route";
-import { authRoutes } from "./modules/auth/auth.routes";
-import { commentRoutes } from "./modules/comment/comment.route";
-import { postRoutes } from "./modules/post/post.route";
-import { notFound } from "./middlewares/notFound";
-import { globalErrorHandler } from "./middlewares/globalErrorHandler";
-import { subscriptionRoutes } from "./modules/subscription/subscription.route";
-import { premiumRoutes } from "./modules/premium/premium.route";
-
+import { userRoutes } from "./modules/user/user.route.js";
+import { authRoutes } from "./modules/auth/auth.routes.js";
+import { commentRoutes } from "./modules/comment/comment.route.js";
+import { postRoutes } from "./modules/post/post.route.js";
+import { notFound } from "./middlewares/notFound.js";
+import { globalErrorHandler } from "./middlewares/globalErrorHandler.js";
+import { subscriptionRoutes } from "./modules/subscription/subscription.route.js";
+import { premiumRoutes } from "./modules/premium/premium.route.js";
 
 const app : Application = express();
 
